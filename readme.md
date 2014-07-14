@@ -1,2 +1,2 @@
-## A Fake eCommerce Website
+## A Fake eCommerce Website (work in progress)
 
