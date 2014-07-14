@@ -4,7 +4,7 @@ class ProductsController extends BaseController {
 
 	public function index()
 	{
-		return View::make('product');
+		return View::make('product')->with('products', Product::all());
 	}
 
 	public function store()
@@ -33,6 +33,23 @@ class ProductsController extends BaseController {
             ->withInput();
 
     }
+
+    public function destroy($id)
+    {
+        $product = Product::find($id);
+
+        if($product)
+        {
+            $product->delete();
+            return Redirect::route('admin.products.index')
+                ->with('message', 'delete successful');
+        }
+
+        return Redirect::route('admin.products.index')
+            ->with('message', 'somthing went wrong');
+
+    }
+
 
 }
 
