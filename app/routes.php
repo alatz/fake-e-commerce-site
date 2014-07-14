@@ -12,8 +12,9 @@
 */
 
 Route::get('/', 'HomeController@showHome');
-Route::get('/', 'HomeController@showHome');
-Route::get('/admin/products', 'ProductsController@showProduct');
+Route::resource('/admin/products', 'ProductsController');
+
+//Route::get('/admin/products', 'ProductsController@showProduct');
 
 //Route::get('/', function()
 //{
