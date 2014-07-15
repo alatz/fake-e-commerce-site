@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', 'HomeController@showHome');
+Route::get('/', 'StoreController@index');
+Route::get('/product/{id}', 'StoreController@singleProduct');
 Route::resource('/admin/products', 'ProductsController');
 
 //Route::get('/admin/products', 'ProductsController@showProduct');
