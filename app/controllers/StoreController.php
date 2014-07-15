@@ -4,7 +4,9 @@ class StoreController extends BaseController {
 
 	public function index()
 	{
-		return View::make('home');
+        return View::make('home')
+            ->with('products', Product::all()->take(9))
+            ->with('featuredProduct', Product::find(12)) ;
 	}
 
 	public function singleProduct($id)

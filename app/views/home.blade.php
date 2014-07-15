@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <h2>Featured Item</h2>
 <div class="jumbotron">
 
@@ -13,66 +12,45 @@
 
     <div class="thumbnail">
       <div class="caption">
-        <h4>Product Name</h4>
-        <h4>Price</h4>
+        <h3>{{$featuredProduct->name}}</h3>
+        <h4>Price: <span>{{$featuredProduct->price}}</span></h4>
       </div>
     </div>
     <!--<div class="btn-group btn-group-justified">
          <a class="btn btn-primary" role="button">Add to Cart</a>
     </div>-->
-         <a class="btn btn-primary btn-lg" role="button">Learn more</a>
+         <a href="{{URL::to('product/'.$featuredProduct->id)}}" class="btn btn-primary btn-lg" role="button">Learn more</a>
   </div>
 
 
   <div class="col-md-6">
     <div class="thumbnail">
-        <img src="http://placehold.it/350x250">
+        <img src="{{asset("img/$featuredProduct->image")}}">
     </div>
   </div>
 
 </div>
 
 </div>
+
+
 
 
 <div class="row">
+@foreach($products as $product)
+
 
   <div class="col-md-4">
     <div class="thumbnail">
-        <img src="http://placehold.it/350x250">
+        <img src="{{asset("img/$product->image")}}">
       <div class="caption">
-        <h4><a href="#">Product Name</a></h4>
-        <h4>Price</h4>
-      </div>
-
-    <!--<div class="btn-group btn-group-justified">
-         <a class="btn btn-primary" role="button">Add to Cart</a>
-    </div>-->
-    </div>
-  </div>
-
-  <div class="col-md-4">
-    <div class="thumbnail">
-        <img src="http://placehold.it/350x250">
-      <div class="caption">
-        <h4><a href="#">Product Name</a></h4>
-        <h4>Price</h4>
+        <h4><a href="{{URL::to('product/'.$product->id)}}">{{$product->name}}</a></h4>
+        <h4>${{$product->price}}</h4>
       </div>
     </div>
   </div>
 
-  <div class="col-md-4">
-    <div class="thumbnail">
-        <img src="http://placehold.it/350x250">
-      <div class="caption">
-        <h4><a href="#">Product Name</a></h4>
-        <h4>Price</h4>
-      </div>
-    </div>
-  </div>
-
+@endforeach
 </div>
-
-
 
 @stop

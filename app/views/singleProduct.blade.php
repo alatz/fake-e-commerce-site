@@ -8,7 +8,7 @@
 
   <div class="col-md-6">
     <div class="thumbnail">
-        <img src="http://placehold.it/350x250">
+        <img src="{{asset("img/$product->image")}}">
     </div>
   </div>
 
