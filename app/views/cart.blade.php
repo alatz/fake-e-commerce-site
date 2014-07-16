@@ -31,4 +31,8 @@
 <button class="btn btn-primary btn-lg" type="submit" >Checkout</button>
 {{Form::close()}}
 
+{{Form::open(['url' => '/', 'method' => 'get'])}}
+<button class="btn btn-primary btn-lg" type="submit" >Continue Shopping</button>
+{{Form::close()}}
+
 @stop
