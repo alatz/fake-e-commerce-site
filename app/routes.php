@@ -13,7 +13,19 @@
 
 Route::get('/', 'StoreController@index');
 Route::get('/product/{id}', 'StoreController@singleProduct');
+
 Route::resource('/admin/products', 'ProductsController');
+
+//registration
+
+Route::get('users/signup', 'UsersController@create');
+Route::post('users/signup', 'UsersController@store');
+
+Route::get('users/signin', 'UsersController@getSignin');
+Route::post('users/signin', 'UsersController@postSignin');
+
+Route::get('users/signout', 'UsersController@getSignout');
+
 
 //Route::get('/admin/products', 'ProductsController@showProduct');
 

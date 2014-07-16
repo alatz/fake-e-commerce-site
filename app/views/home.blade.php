@@ -16,6 +16,7 @@
         <h4>Price: <span>{{$featuredProduct->price}}</span></h4>
       </div>
     </div>
+
     <!--<div class="btn-group btn-group-justified">
          <a class="btn btn-primary" role="button">Add to Cart</a>
     </div>-->

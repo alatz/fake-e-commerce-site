@@ -19,7 +19,13 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Sign In/Account</a></li>
+        @if(Auth::check())
+            <li><a href="#">{{Auth::user()->firstname}}</a></li>
+            <li>{{link_to('/users/signout','sign out')}}</li>
+        @else
+            <li>{{link_to('/users/signin','signin')}}</li>
+            <li>{{link_to('/users/signup','signup')}}</li>
+        @endif
         <!--
         <li><button type="button" class="btn btn-default navbar-btn">Sign in</button></li>
         -->
