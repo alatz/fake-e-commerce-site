@@ -7,28 +7,32 @@
 
 <div class="row">
 
+  <div class="col-md-6">
+    <div class="thumbnail">
+        <img src="{{asset("img/$featuredProduct->image")}}">
+    </div>
+  </div>
 
   <div class="col-md-6">
 
     <div class="thumbnail">
       <div class="caption">
         <h3>{{$featuredProduct->name}}</h3>
-        <h4>Price: <span>{{$featuredProduct->price}}</span></h4>
+        <h4><span>{{$featuredProduct->price}}</span></h4>
+    <div class="btn-group btn-group-justified">
+         <a class="btn btn-primary btn-lg" role="button">Learn More</a>
+    </div>
+        <!--<a class="btn btn-primary btn-lg" role="button">Learn More</a>-->
+
       </div>
     </div>
 
     <!--<div class="btn-group btn-group-justified">
          <a class="btn btn-primary" role="button">Add to Cart</a>
     </div>-->
-         <a href="{{URL::to('product/'.$featuredProduct->id)}}" class="btn btn-primary btn-lg" role="button">Learn more</a>
   </div>
 
 
-  <div class="col-md-6">
-    <div class="thumbnail">
-        <img src="{{asset("img/$featuredProduct->image")}}">
-    </div>
-  </div>
 
 </div>
 

@@ -23,8 +23,8 @@
             <li><a href="#">{{Auth::user()->firstname}}</a></li>
             <li>{{link_to('/users/signout','sign out')}}</li>
         @else
-            <li>{{link_to('/users/signin','signin')}}</li>
-            <li>{{link_to('/users/signup','signup')}}</li>
+            <li>{{link_to('/users/signin','sign in')}}</li>
+            <li>{{link_to('/users/signup','sign up')}}</li>
         @endif
         <!--
         <li><button type="button" class="btn btn-default navbar-btn">Sign in</button></li>
