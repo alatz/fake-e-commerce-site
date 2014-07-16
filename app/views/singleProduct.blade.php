@@ -16,10 +16,8 @@
 
     <div class="thumbnail">
       <div class="caption">
-        <h4>Details</h4>
         <p>{{$product->description}}</p>
-        <h4>Price</h4>
-        <h4>{{$product->price}}</h4>
+        <h4><span class="price">${{$product->price}}</span></h4>
         <a class="btn btn-primary btn-lg" role="button">Add to cart</a>
 
       </div>

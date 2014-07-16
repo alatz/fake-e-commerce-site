@@ -31,6 +31,7 @@ class UsersController extends BaseController
         }
 
         return Redirect::to('users/signup')
+            ->with('message', 'The following errors occurred')
             ->withErrors($validator)
             ->withInput();
     }

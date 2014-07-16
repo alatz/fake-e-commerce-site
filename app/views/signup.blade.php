@@ -2,9 +2,6 @@
 
 @section('content')
 
-<h1>Signup</h1>
-
-
 @if($errors->has())
     <ul>
     @foreach($errors->all() as $error)
@@ -12,6 +9,8 @@
     @endforeach
     </ul>
 @endif
+
+<h1>Signup</h1>
 
 {{Form::open(['url' => 'users/signup'])}}
 
