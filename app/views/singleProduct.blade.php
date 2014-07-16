@@ -18,7 +18,12 @@
       <div class="caption">
         <p>{{$product->description}}</p>
         <h4><span class="price">${{$product->price}}</span></h4>
-        <a class="btn btn-primary btn-lg" role="button">Add to cart</a>
+        {{Form::open(['url' => 'cart'])}}
+        {{Form::label('qty', 'Qty')}}
+        {{Form::text('qty', 1, ['maxlength'=> 2])}}<br>
+        {{Form::hidden('id', $product->id)}}
+        <button class="btn btn-primary btn-lg" type="submit" >Add to cart</button>
+        {{Form::close()}}
 
       </div>
     </div>

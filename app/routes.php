@@ -26,22 +26,11 @@ Route::post('users/signin', 'UsersController@postSignin');
 
 Route::get('users/signout', 'UsersController@getSignout');
 
+//cart
+Route::get('cart', 'StoreController@showCart');
+Route::post('cart', 'StoreController@addToCart');
+Route::get('cart/remove/{identifier}', 'StoreController@removeFromCart');
+Route::get('checkout', 'StoreController@checkout');
 
-//Route::get('/admin/products', 'ProductsController@showProduct');
-
-//Route::get('/', function()
-//{
-    //testing
-    //$names = Items::lists('id','name');
-    //var_dump($names);
-
-    //$items = Items::all();
-    //foreach($items as $item)
-    //{
-    //    echo $item->name."...<br>";
-    //}
-
-//	return View::make('home');
-//});
 
 
