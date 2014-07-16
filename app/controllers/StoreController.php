@@ -2,6 +2,11 @@
 
 class StoreController extends BaseController {
 
+    public function __construct()
+    {
+        $this->beforeFilter('csrf', ['on' => 'post']);
+    }
+
 	public function index()
 	{
         return View::make('home')

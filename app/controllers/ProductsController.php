@@ -2,6 +2,11 @@
 
 class ProductsController extends BaseController {
 
+    public function __construct()
+    {
+        $this->beforeFilter('csrf', ['on' => 'post']);
+    }
+
 	public function index()
 	{
 		return View::make('product')->with('products', Product::all());

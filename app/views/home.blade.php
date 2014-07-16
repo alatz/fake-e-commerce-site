@@ -18,7 +18,7 @@
     <div class="thumbnail">
       <div class="caption">
         <h3>{{$featuredProduct->name}}</h3>
-        <h4><span>{{$featuredProduct->price}}</span></h4>
+        <h4><span class="price">{{$featuredProduct->price}}</span></h4>
     <div class="btn-group btn-group-justified">
          <a class="btn btn-primary btn-lg" role="button">Learn More</a>
     </div>

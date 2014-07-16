@@ -1,1 +1,9 @@
 body { padding-top: 70px; }
+
+.price {
+    color: #c0392b;
+};
+
+.navbar-custom {
+    background-color: #9B59B6;
+}
