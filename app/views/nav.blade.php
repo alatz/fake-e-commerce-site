@@ -21,10 +21,13 @@
         <ul class="nav navbar-nav navbar-right">
         @if(Auth::check())
             <li><a href="#">{{Auth::user()->firstname}}</a></li>
-            <li>{{link_to('/users/signout','sign out')}}</li>
+            <li>{{link_to('/users/signout','Sign Out')}}</li>
+            @if(Auth::user()->admin == 1)
+                <li>{{link_to('/admin/products', 'Manage Products')}}</li>
+            @endif
         @else
-            <li>{{link_to('/users/signin','sign in')}}</li>
-            <li>{{link_to('/users/signup','sign up')}}</li>
+            <li>{{link_to('/users/signin','Sign In')}}</li>
+            <li>{{link_to('/users/signup','Sign Up')}}</li>
         @endif
         <!--
         <li><button type="button" class="btn btn-default navbar-btn">Sign in</button></li>

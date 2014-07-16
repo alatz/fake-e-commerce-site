@@ -17,10 +17,10 @@
 
     <div class="thumbnail">
       <div class="caption">
-        <h3>{{$featuredProduct->name}}</h3>
+        <h3><a href="product/{{$featuredProduct->id}}">{{$featuredProduct->name}}</a></h3>
         <h4><span class="price">${{$featuredProduct->price}}</span></h4>
     <div class="btn-group btn-group-justified">
-         <a class="btn btn-primary btn-lg" role="button">Learn More</a>
+         <a href="product/{{$featuredProduct->id}}" class="btn btn-primary btn-lg" role="button">Learn More</a>
     </div>
         <!--<a class="btn btn-primary btn-lg" role="button">Learn More</a>-->
 
