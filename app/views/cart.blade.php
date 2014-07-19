@@ -2,6 +2,8 @@
 
 @section('content')
 
+<h2>Shopping Cart</h2>
+
 <table class="table">
 
 <tr>
@@ -30,6 +32,8 @@
 {{Form::open(['url' => 'checkout', 'method' => 'get'])}}
 <button class="btn btn-primary btn-lg" type="submit" >Checkout</button>
 {{Form::close()}}
+
+<br>
 
 {{Form::open(['url' => '/', 'method' => 'get'])}}
 <button class="btn btn-primary btn-lg" type="submit" >Continue Shopping</button>

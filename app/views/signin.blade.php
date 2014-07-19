@@ -3,6 +3,8 @@
 
 @section('content')
 
+<h2>Sign In</h2>
+
 {{Form::open(['url' => 'users/signin'])}}
 
 <p>

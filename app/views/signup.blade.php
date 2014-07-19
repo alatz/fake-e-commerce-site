@@ -10,7 +10,7 @@
     </ul>
 @endif
 
-<h1>Signup</h1>
+<h2>Signup</h2>
 
 {{Form::open(['url' => 'users/signup'])}}
 
