@@ -19,18 +19,14 @@
 <div class="btn-group btn-group-justified">
      <a href="product/{{$featuredProduct->id}}" class="btn btn-primary btn-lg" role="button">Learn More</a>
 </div>
-    <!--<a class="btn btn-primary btn-lg" role="button">Learn More</a>-->
 
-</div>
-</div>
-
-    <!--<div class="btn-group btn-group-justified">
-         <a class="btn btn-primary" role="button">Add to Cart</a>
-    </div>-->
 </div>
 
 </div>
 
 </div>
 
+</div>
+
+</div>
 

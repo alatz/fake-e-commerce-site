@@ -4,6 +4,10 @@
 
 <h2>Shopping Cart</h2>
 
+
+@if(!$products)
+<div class="alert alert-info" role="alert">Cart is empty</div>
+@else
 <table class="table">
 
 <tr>
@@ -34,6 +38,8 @@
 
 <br>
 <br>
+
+@endif
 
 <a href="{{URL::to('/')}}" class="btn btn-primary btn-lg" role="button">Continue Shopping</a>
 
