@@ -21,8 +21,8 @@
         {{Form::open(['url' => 'cart'])}}
         <div class="row">
             <div class="col-xs-2">
-                {{Form::label('qty', 'Qty', ['class' => 'spacer'])}}
-                {{Form::text('qty', 1, ['maxlength'=> 2, 'class' => 'form-control'])}}
+                {{Form::label('qty', 'Qty')}}
+                {{Form::text('qty', 1, ['maxlength'=> 2, 'class' => 'form-control bot-margin'])}}
             </div>
         </div>
         {{Form::hidden('id', $product->id)}}

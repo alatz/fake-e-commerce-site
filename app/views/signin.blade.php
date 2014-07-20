@@ -7,17 +7,22 @@
 
 {{Form::open(['url' => 'users/signin'])}}
 
-<p>
-    {{Form::label('email')}}<br>
-    {{Form::text('email')}}
-</p>
+<div class="row">
+    <div class="form-group col-xs-4">
+        {{Form::label('Email')}}
+        {{Form::text('email', '',  ['class' => 'form-control', 'placeholder' => 'Email'])}}
+    </div>
+</div>
 
-<p>
-    {{Form::label('password')}}<br>
-    {{Form::password('password')}}
-</p>
+<div class="row">
+    <div class="form-group col-xs-4">
+        {{Form::label('Password')}}
+        {{Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password'])}}
+    </div>
+</div>
 
-{{Form::submit('Sign In')}}
+
+{{Form::submit('Sign In', ['class' => 'btn btn-primary'])}}
 
 {{Form::close()}}
 
