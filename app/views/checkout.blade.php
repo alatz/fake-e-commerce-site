@@ -5,7 +5,7 @@
 
 <h2>Checkout</h2>
 
-<div class="alert alert-danger" role="alert">
+<div class="alert alert-danger">
     <p><strong>Sorry!</strong> This site isn't real, therefore you can't order any of the products.</p>
 </div>
 

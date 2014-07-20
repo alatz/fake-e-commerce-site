@@ -14,14 +14,20 @@
 
 @include('nav')
 
-@yield('jumbotron')
-
 <div class="container">
+
+    @yield('jumbotron')
+
     @if(Session::has('message'))
+        @if(Session::has('class'))
+        <p class="{{Session::get('class')}}">{{Session::get('message')}}</p>
+        @else
         <p>{{Session::get('message')}}</p>
+        @endif
     @endif
 
     @yield('content')
+
 </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

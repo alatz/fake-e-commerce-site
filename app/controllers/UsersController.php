@@ -27,11 +27,13 @@ class UsersController extends BaseController
             $user->save();
 
             return Redirect::to('users/signin')
+                ->with('class', 'alert alert-success')
                 ->with('message', 'You successfully created an account.');
         }
 
         return Redirect::to('users/signup')
             ->with('message', 'The following errors occurred')
+            ->with('class', 'alert alert-danger')
             ->withErrors($validator)
             ->withInput();
     }
@@ -45,19 +47,23 @@ class UsersController extends BaseController
     {
         if(Auth::attempt(['email' => Input::get('email'), 'password' => Input::get('password')]))
         {
-            return Redirect::to('/')->with('message', 'Sign in Succussful');
+            return Redirect::to('/')
+                ->with('class', 'alert alert-success')
+                ->with('message', 'Sign in Succussful');
         }
 
         return Redirect::to('users/signin')
+            ->with('class', 'alert alert-danger')
             ->with('message', 'There was a problem with your email/password');
     }
 
     public function getSignout()
     {
         Auth::logout();
-        return Redirect::to('users/signin')->with('message', 'You just signed out.');
+        return Redirect::to('users/signin')
+            ->with('class', 'alert alert-success')
+            ->with('message', 'Sign out Succussful');
     }
-
 
 }
 

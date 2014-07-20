@@ -1,5 +1,4 @@
-<div class="jumbotron">
-<div class="container">
+<div class="jumbotron clearfix">
 
 <h3>Featured Item</h3>
 
@@ -34,5 +33,4 @@
 
 </div>
 
-</div>
 

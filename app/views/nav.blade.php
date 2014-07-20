@@ -33,12 +33,10 @@
         <li><button type="button" class="btn btn-default navbar-btn">Sign in</button></li>
         -->
         <li>
-        {{Form::open(['url' => 'cart', 'method' => 'get'])}}
-        <button type="submit" class="btn btn-default navbar-btn">
+        <a href="{{URL::to('/cart')}}" class="btn btn-default btn-default" role="button">
             <span class="glyphicon glyphicon-shopping-cart"></span>
             <span class="badge">{{Cart::totalItems(true)}}</span>
-        </button>
-        {{Form::close()}}
+        </a>
         </li>
         </ul>
 

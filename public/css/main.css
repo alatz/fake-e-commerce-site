@@ -10,14 +10,13 @@ body {
 
 
 .btn-default {
-    background-color: #E4F1FE;
+    background-color: #fff;
+    background-color: #D2D7D3;
 }
-
 
 h2,h3,h4 {
     margin: 20px 0;
 }
-
 
 .btn, .btn-lg, .thumbnail, .container .jumbotron, .form-control {
     border-radius: 0;
