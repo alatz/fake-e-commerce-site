@@ -52,7 +52,7 @@ class StoreController extends BaseController {
     {
         if(Auth::check())
         {
-            return View::make('sorry');
+            return View::make('checkout');
         }
 
         return Redirect::to('users/signin')->with('message', 'Please sign in');
