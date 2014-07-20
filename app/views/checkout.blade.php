@@ -2,11 +2,10 @@
 
 @section('content')
 
-
 <h2>Checkout</h2>
 
 <div class="alert alert-danger">
-    <p><strong>Sorry!</strong> This site isn't real, therefore you can't order any of the products.</p>
+    <p><strong>Sorry!</strong> This store isn't real, therefore you can't order any of the products.</p>
 </div>
 
 {{Form::open(['url' => 'users/signup'])}}
@@ -75,5 +74,4 @@
 {{Form::close()}}
 
 @stop
-
 

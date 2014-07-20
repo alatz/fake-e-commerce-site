@@ -2,7 +2,6 @@
 
 class UsersController extends BaseController
 {
-
     public function __construct()
     {
         $this->beforeFilter('csrf', ['on' => 'post']);
@@ -47,9 +46,8 @@ class UsersController extends BaseController
     {
         if(Auth::attempt(['email' => Input::get('email'), 'password' => Input::get('password')]))
         {
-            return Redirect::to('/')
-                ->with('class', 'alert alert-success')
-                ->with('message', 'Sign in Succussful');
+            //redirect to intended page (eg checkout), or if none intended redirect to home
+            return Redirect::intended('/');
         }
 
         return Redirect::to('users/signin')

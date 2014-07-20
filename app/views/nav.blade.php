@@ -35,7 +35,7 @@
         <li>
         <a href="{{URL::to('/cart')}}" class="btn btn-default btn-default" role="button">
             <span class="glyphicon glyphicon-shopping-cart"></span>
-            <span class="badge">{{Cart::totalItems(true)}}</span>
+            <span class="badge">{{Cart::totalItems()}}</span>
         </a>
         </li>
         </ul>

@@ -8,9 +8,9 @@
 
 <tr>
     <th></th>
-    <th>name</th>
-    <th>price</th>
-    <th>quantity</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Quantity</th>
     <th></th>
 </tr>
 
@@ -29,14 +29,12 @@
 </table>
 
 <h4>Total ({{Cart::TotalItems()}} items): <span class="price">${{Cart::total()}}</span></h4>
-{{Form::open(['url' => 'checkout', 'method' => 'get'])}}
-<button class="btn btn-primary btn-lg" type="submit" >Checkout</button>
-{{Form::close()}}
+
+<a href="{{URL::to('/checkout')}}" class="btn btn-primary btn-lg" role="button">Checkout</a>
 
 <br>
+<br>
 
-{{Form::open(['url' => '/', 'method' => 'get'])}}
-<button class="btn btn-primary btn-lg" type="submit" >Continue Shopping</button>
-{{Form::close()}}
+<a href="{{URL::to('/')}}" class="btn btn-primary btn-lg" role="button">Continue Shopping</a>
 
 @stop

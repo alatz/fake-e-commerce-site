@@ -1,4 +1,4 @@
-<div class="jumbotron clearfix">
+<div class="jumbotron">
 
 <h3>Featured Item</h3>
 

@@ -28,12 +28,14 @@ class ProductsController extends BaseController {
 
             //add message about successful creation
             return Redirect::route('admin.products.index')
+                ->with('class', 'alert alert-success')
                 ->with('message', 'Product Created Successfully');
 
         }
 
         //return error
         return Redirect::route('admin.products.index')
+            ->with('class', 'alert alert-danger')
             ->with('message', 'There was a problem')
             ->witherrors($validator)
             ->withInput();
@@ -48,10 +50,12 @@ class ProductsController extends BaseController {
         {
             $product->delete();
             return Redirect::route('admin.products.index')
+                ->with('class', 'alert alert-success')
                 ->with('message', 'delete successful');
         }
 
         return Redirect::route('admin.products.index')
+            ->with('class', 'alert alert-danger')
             ->with('message', 'somthing went wrong');
 
     }

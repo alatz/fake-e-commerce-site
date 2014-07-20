@@ -32,7 +32,9 @@ class StoreController extends BaseController {
             'image' => $item->image
         ]);
 
-        return Redirect::to('cart');
+        return Redirect::to('cart')
+            ->with('class', 'alert alert-success')
+            ->with('message', " $qty Item(s) added to cart");
     }
 
     public function showCart()
@@ -55,7 +57,10 @@ class StoreController extends BaseController {
             return View::make('checkout');
         }
 
-        return Redirect::to('users/signin')->with('message', 'Please sign in');
+        //send guest to sign in page if not logged in
+        return Redirect::guest('users/signin')
+            ->with('class', 'alert alert-warning')
+            ->with('message', 'Please sign in');
     }
 
 }
