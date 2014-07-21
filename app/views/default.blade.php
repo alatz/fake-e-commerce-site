@@ -14,7 +14,7 @@
 
 @include('nav')
 
-<div class="container">
+<div class="container bot-margin">
 
     @yield('jumbotron')
 

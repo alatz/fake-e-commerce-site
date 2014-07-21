@@ -8,15 +8,18 @@
 @if(!$products)
 <div class="alert alert-info" role="alert">Cart is empty</div>
 @else
-<table class="table">
+<div class="table-responsive">
+<table class="table ">
 
 <tr>
-    <th></th>
-    <th>Name</th>
-    <th>Price</th>
-    <th>Quantity</th>
-    <th></th>
+    <th class="col-sm-2"></th>
+    <th class="col-sm-3">Name</th>
+    <th class="col-sm-2">Price</th>
+    <th class="col-sm-2">Quantity</th>
+    <th class="col-sm-2"></th>
+    <th class="col-sm-2"></th>
 </tr>
+
 
 @foreach($products as $product)
 
@@ -24,15 +27,23 @@
     <td><img height="125" width="175" src="{{asset('img/'.$product->image)}}"></td>
     <td>{{link_to("/product/$product->id", $product->name)}}</td>
     <td><span class="price">${{$product->price * $product->quantity}}</span></td>
-    <td>{{$product->quantity}}</td>
+
+
+    {{Form::open(['url' => 'cart/update'])}}
+    {{Form::hidden('identifier', $product->identifier)}}
+    <td>{{Form::text('qty', $product->quantity, ['maxlength'=> 2, 'class' => 'form-control input-sm'])}}</td>
+    <td>{{Form::submit('Update', ['class' => 'pull-right btn btn-primary btn-sm'])}}</td>
+    {{Form::close()}}
+
+
     <td><a href="cart/remove/{{$product->identifier}}">Remove Item(s)</a></td>
 </tr>
 
 @endforeach
 
 </table>
+</div>
 
-<h4 class="text-right"><a href="#">Update</a></h4>
 <h4 class="text-right">Total ({{Cart::TotalItems()}} items): <span class="price">${{Cart::total()}}</span></h4>
 
 <a href="{{URL::to('/checkout')}}" class="pull-right btn btn-primary btn-lg" role="button">Checkout</a>

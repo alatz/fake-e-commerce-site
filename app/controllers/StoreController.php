@@ -47,6 +47,17 @@ class StoreController extends BaseController {
         $item = Cart::Item($identifier);
         $item->remove();
 
+        return Redirect::to('cart')
+            ->with('class', 'alert alert-success')
+            ->with('message', "$item->quantity Item(s) removed");
+    }
+
+    public function updateCart()
+    {
+        $item = Cart::Item(Input::get('identifier'));
+
+        $item->quantity = Input::get('qty');
+
         return Redirect::to('cart');
     }
 
