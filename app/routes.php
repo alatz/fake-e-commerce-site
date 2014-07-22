@@ -11,24 +11,22 @@
 |
 */
 
-//admin
-Route::resource('/admin/products', 'ProductsController');
+//admin (uses resourceful routing ie is RESTful)
+Route::resource('admin/products', 'ProductsController');
 
 //store
 Route::get('/', 'StoreController@index');
-Route::get('/product/{id}', 'StoreController@singleProduct');
-
-//cart
+Route::get('product/{id}', 'StoreController@singleProduct');
 Route::get('cart', 'StoreController@showCart');
 Route::post('cart', 'StoreController@addToCart');
-Route::get('checkout', 'StoreController@checkout');
 Route::get('cart/remove/{identifier}', 'StoreController@removeFromCart');
 Route::post('cart/update', 'StoreController@updateCart');
+Route::get('checkout', 'StoreController@checkout');
 
 //registration
-Route::get('users/signup', 'UsersController@create');
-Route::post('users/signup', 'UsersController@store');
-Route::get('users/signin', 'UsersController@getSignin');
-Route::post('users/signin', 'UsersController@postSignin');
-Route::get('users/signout', 'UsersController@getSignout');
+Route::get('signup', 'UsersController@showSignUp');
+Route::post('signup', 'UsersController@signUp');
+Route::get('signin', 'UsersController@showSignIn');
+Route::post('signin', 'UsersController@signIn');
+Route::get('signout', 'UsersController@signOut');
 

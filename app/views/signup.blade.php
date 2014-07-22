@@ -13,7 +13,7 @@
 
 <h2>Sign Up</h2>
 
-{{Form::open(['url' => 'users/signup'])}}
+{{Form::open(['url' => 'signup'])}}
 
     <div class="row">
         <div class="form-group col-xs-6">

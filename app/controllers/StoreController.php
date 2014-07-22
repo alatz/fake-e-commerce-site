@@ -1,6 +1,7 @@
 <?php
 
-class StoreController extends BaseController {
+class StoreController extends BaseController
+{
 
     public function __construct()
     {
@@ -19,9 +20,15 @@ class StoreController extends BaseController {
         return View::make('singleProduct')->with('product', Product::find($id));
 	}
 
+    public function showCart()
+    {
+        return View::make('cart')->with('products', Cart::contents());
+    }
+
     public function addToCart()
     {
         $item = Product::find(Input::get('id'));
+
         $qty = Input::get('qty');
 
         Cart::insert([
@@ -37,14 +44,10 @@ class StoreController extends BaseController {
             ->with('message', " $qty Item(s) Added to Cart");
     }
 
-    public function showCart()
-    {
-        return View::make('cart')->with('products', Cart::contents());
-    }
-
     public function removeFromCart($identifier)
     {
         $item = Cart::Item($identifier);
+
         $item->remove();
 
         return Redirect::to('cart')
@@ -71,7 +74,7 @@ class StoreController extends BaseController {
         }
 
         //send guest to sign in page if not logged in
-        return Redirect::guest('users/signin')
+        return Redirect::guest('signin')
             ->with('class', 'alert alert-warning')
             ->with('message', 'Please sign in');
     }

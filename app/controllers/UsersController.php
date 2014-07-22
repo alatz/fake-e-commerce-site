@@ -7,12 +7,12 @@ class UsersController extends BaseController
         $this->beforeFilter('csrf', ['on' => 'post']);
     }
 
-    public function create()
+    public function showSignUp()
     {
         return View::make('signup');
     }
 
-    public function store()
+    public function signUp()
     {
         $validator = Validator::make(Input::all(), User::$rules);
 
@@ -25,24 +25,24 @@ class UsersController extends BaseController
             $user->password = Hash::make(Input::get('password'));
             $user->save();
 
-            return Redirect::to('users/signin')
+            return Redirect::to('signin')
                 ->with('class', 'alert alert-success')
                 ->with('message', 'You successfully created an account.');
         }
 
-        return Redirect::to('users/signup')
+        return Redirect::to('signup')
             ->with('message', 'The following errors occurred')
             ->with('class', 'alert alert-danger')
             ->withErrors($validator)
             ->withInput();
     }
 
-    public function getSignin()
+    public function showSignIn()
     {
         return View::make('signin');
     }
 
-    public function postSignin()
+    public function signIn()
     {
         if(Auth::attempt(['email' => Input::get('email'), 'password' => Input::get('password')]))
         {
@@ -50,15 +50,15 @@ class UsersController extends BaseController
             return Redirect::intended('/');
         }
 
-        return Redirect::to('users/signin')
+        return Redirect::to('signin')
             ->with('class', 'alert alert-danger')
             ->with('message', 'There was a problem with your email/password');
     }
 
-    public function getSignout()
+    public function signOut()
     {
         Auth::logout();
-        return Redirect::to('users/signin')
+        return Redirect::to('signin')
             ->with('class', 'alert alert-success')
             ->with('message', 'Sign out Succussful');
     }

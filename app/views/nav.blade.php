@@ -16,13 +16,13 @@
         <ul class="nav navbar-nav navbar-right">
             @if(Auth::check())
                 <li><a href="#">{{Auth::user()->firstname}}</a></li>
-                <li>{{link_to('/users/signout','Sign Out')}}</li>
+                <li>{{link_to('/signout','Sign Out')}}</li>
                 @if(Auth::user()->admin == 1)
                     <li>{{link_to('/admin/products', 'Manage Products')}}</li>
                 @endif
             @else
-                <li>{{link_to('/users/signin','Sign In')}}</li>
-                <li>{{link_to('/users/signup','Sign Up')}}</li>
+                <li>{{link_to('/signin','Sign In')}}</li>
+                <li>{{link_to('/signup','Sign Up')}}</li>
             @endif
             <li>
                 <a href="{{URL::to('/cart')}}" class="btn btn-default btn-default" role="button">

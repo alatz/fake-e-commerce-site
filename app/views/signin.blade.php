@@ -4,7 +4,7 @@
 
 <h2>Sign In</h2>
 
-{{Form::open(['url' => 'users/signin'])}}
+{{Form::open(['url' => 'signin'])}}
 
     <div class="row">
 

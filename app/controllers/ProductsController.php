@@ -1,7 +1,7 @@
 <?php
 
-class ProductsController extends BaseController {
-
+class ProductsController extends BaseController
+{
     public function __construct()
     {
         $this->beforeFilter('csrf', ['on' => 'post']);
@@ -30,7 +30,6 @@ class ProductsController extends BaseController {
             return Redirect::route('admin.products.index')
                 ->with('class', 'alert alert-success')
                 ->with('message', 'Product Created Successfully');
-
         }
 
         //return error
@@ -39,7 +38,6 @@ class ProductsController extends BaseController {
             ->with('message', 'There was a problem')
             ->witherrors($validator)
             ->withInput();
-
     }
 
     public function destroy($id)
@@ -57,9 +55,7 @@ class ProductsController extends BaseController {
         return Redirect::route('admin.products.index')
             ->with('class', 'alert alert-danger')
             ->with('message', 'somthing went wrong');
-
     }
-
 
 }
 
