@@ -10,4 +10,5 @@ class Product extends Eloquent
         'price' => 'required|numeric',
         'image' => 'required|min:5'
     ];
+
 }
