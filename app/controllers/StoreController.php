@@ -34,7 +34,7 @@ class StoreController extends BaseController {
 
         return Redirect::to('cart')
             ->with('class', 'alert alert-success')
-            ->with('message', " $qty Item(s) added to cart");
+            ->with('message', " $qty Item(s) Added to Cart");
     }
 
     public function showCart()
@@ -49,7 +49,7 @@ class StoreController extends BaseController {
 
         return Redirect::to('cart')
             ->with('class', 'alert alert-success')
-            ->with('message', "$item->quantity Item(s) removed");
+            ->with('message', "$item->quantity Item(s) Removed");
     }
 
     public function updateCart()
@@ -58,7 +58,9 @@ class StoreController extends BaseController {
 
         $item->quantity = Input::get('qty');
 
-        return Redirect::to('cart');
+        return Redirect::to('cart')
+            ->with('class', 'alert alert-success')
+            ->with('message', 'Cart Updated');
     }
 
     public function checkout()

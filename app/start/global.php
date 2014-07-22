@@ -79,3 +79,9 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+//return custom 404 view if page not found
+App::missing(function($exception)
+{
+    return Response::view('404', array(), 404);
+});

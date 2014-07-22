@@ -18,17 +18,17 @@ Route::resource('/admin/products', 'ProductsController');
 Route::get('/', 'StoreController@index');
 Route::get('/product/{id}', 'StoreController@singleProduct');
 
-//registration
-Route::get('users/signup', 'UsersController@create');
-Route::post('users/signup', 'UsersController@store');
-Route::get('users/signin', 'UsersController@getSignin');
-Route::post('users/signin', 'UsersController@postSignin');
-Route::get('users/signout', 'UsersController@getSignout');
-
 //cart
 Route::get('cart', 'StoreController@showCart');
 Route::post('cart', 'StoreController@addToCart');
 Route::get('checkout', 'StoreController@checkout');
 Route::get('cart/remove/{identifier}', 'StoreController@removeFromCart');
 Route::post('cart/update', 'StoreController@updateCart');
+
+//registration
+Route::get('users/signup', 'UsersController@create');
+Route::post('users/signup', 'UsersController@store');
+Route::get('users/signin', 'UsersController@getSignin');
+Route::post('users/signin', 'UsersController@postSignin');
+Route::get('users/signout', 'UsersController@getSignout');
 

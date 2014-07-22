@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>title</title>
+    <title>Example eCommerce Website</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
     {{HTML::style('css/main.css')}}
@@ -18,11 +18,14 @@
 
     @yield('jumbotron')
 
+    {{-- show message if it's present --}}
     @if(Session::has('message'))
+        {{-- add class to message if it's present --}}
         @if(Session::has('class'))
-        <p class="{{Session::get('class')}}">{{Session::get('message')}}</p>
+            <p class="{{Session::get('class')}}">{{Session::get('message')}}</p>
+        {{-- show message without a class --}}
         @else
-        <p>{{Session::get('message')}}</p>
+            <p>{{Session::get('message')}}</p>
         @endif
     @endif
 
